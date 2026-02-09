@@ -37,6 +37,10 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
+    implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.media3.ui)
+    implementation(libs.coil.compose) // Ensure coil is here too
+
     implementation(project(":core:ui"))
     implementation(project(":core:model"))
     implementation(project(":core:domain"))
