@@ -23,6 +23,8 @@ fun MediaDetailScreen(
     uri: String,
     onBack: () -> Unit
 ) {
+    val isVideo = uri.endsWith(".mp4", ignoreCase = true) || uri.endsWith(".MOV", ignoreCase = true)
+
     Scaffold(
         topBar = {
             TopAppBar(
@@ -48,12 +50,17 @@ fun MediaDetailScreen(
                 .fillMaxSize()
                 .padding(padding)
         ) {
-            AsyncImage(
-                model = uri,
-                contentDescription = null,
-                modifier = Modifier.fillMaxSize(),
-                contentScale = ContentScale.Fit
-            )
+            if (isVideo) {
+                VideoPlayer(uri = uri)
+            } else {
+                AsyncImage(
+                    model = uri,
+                    contentDescription = null,
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.Fit
+                )
+            }
         }
     }
 }
+

@@ -54,6 +54,9 @@ fun EditorScreen(
             Button(onClick = { viewModel.redo() }) {
                 Text("Redo")
             }
+            Button(onClick = { viewModel.applyEdits() }) {
+                Text("Save")
+            }
         }
     }
 }
