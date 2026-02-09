@@ -36,7 +36,7 @@ dependencies {
     implementation(libs.androidx.material3)
     
     // Icons
-    implementation(libs.androidx.material) // For extended icons if needed
+    // implementation(libs.androidx.material) // For extended icons if needed
     
     implementation(libs.coil.compose)
 
